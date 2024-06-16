@@ -13,6 +13,7 @@
     <meta property="og:video:height" content="720" />
     <title>Gacor Simulator</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
         @import url(https://db.onlinewebfonts.com/c/ffc718cd15e8caac3542af07605bf386?family=Papyrus+V2); 
         body {
             font-family: 'Papyrus V2', sans-serif;
@@ -69,17 +70,22 @@
 </head>
 <body>
     <img src="https://i.pinimg.com/originals/c1/0f/09/c10f09d7fe6f756c8abf441c92a0ba3c.gif">
-    <h1 style="font-size: 3rem; font-weight: bold;">RONALDO VIP CR7 SLOT ONLINE TERPERCAYA</h1>
-    <marquee scrollamount="20">DRAKE PERNAH MAIN DISINI - DEPO 5 RIBU TARIK 200 JUTA - JAMINAN ANTI BLOKIR - KOMINFO WHO - JAMINAN UANG KEMBALI - COD</marquee>
+    <h1 style="font-size: 3rem; font-weight: bold;">VIP 777 SLOT FUMO ONLINE TERPERCAYA</h1>
+    <marquee scrollamount="20">DRAKE PERNAH MAIN DISINI - DEPO 5 RIBU TARIK 200 JUTA  - KOMINFO WHO - GACOR 100% - BISA COD - 90% OF GAMBLERS QUIT BEFORE THEY WIN BIG</marquee>
     <div class="image-container">
         <img id="img1" src="1.png" alt="">
         <img id="img2" src="2.png" alt="">
         <img id="img3" src="3.png" alt="">
         <img id="img4" src="4.png" alt="">
     </div>
-    <button id="gacorButton">aku mau tobrut pak prabowo</button>
+    <div style="display: flex; align-items: center; padding-top: 1rem;">
+        <button id="gacorButton">aku mau tobrut pak prabowo</button>
+        <input type="checkbox" id="expressmode" style="margin-left: 10px;">
+        <label for="expressmode" style="font-size: 2rem;">express mode</label>
+    </div>
     <iframe src="https://john.citrons.xyz/embed?ref=https://777vipfurrygacor.games" style="margin-left:auto;display:block;margin-right:auto;max-width:732px;width:100%;height:94px;border:none;"></iframe>
     <div id="toast"></div>
+    <a href="https://porto.ryj.my.id" style="font-family: 'DM Sans'; position: fixed; bottom:20px; display: flex; align-items: center;">satu lagi dari<img style="width: 75px;" src="ryjlogo.png" alt=""></a>
     <audio id="gacorSound" src="GACOOOOR.mp3"></audio>
     <audio id="duarSound" loop=true src="duar.mp3"></audio>
     <audio id="LMAOOOOO" src="atumalaka.mp3"></audio>
@@ -90,7 +96,13 @@
             '3.png',
             '4.png'
         ];
-        const names = ["Drake","Prabowo","Jokowi","Raffi Ahmad","Deddy Corbuzier","Johnny G. Plato"];
+        const freaky = [
+            'f1.png',
+            'f2.png',
+            'f3.png',
+            'f4.png'
+        ];
+        const names = ["Drake","Kendrick","Lil Uzi Vert","Johnny G. Plato"];
 
         function getRandomAmount() {
             const min = 1000000; 
@@ -122,7 +134,7 @@
             '- limit kredivo',
             '- makanan buat keluarga',
             '- keluarga',
-            '- e-kitten femboy',
+            '- masa depan',
             '- 271T',
             '- istri',
             '- laptop'
@@ -157,9 +169,11 @@
         }
 
         document.getElementById('gacorButton').addEventListener('click', async function() {
+            const expressMode = document.getElementById('expressmode').checked;
             document.getElementById('gacorButton').disabled = true;
             showFloatingText();
             document.getElementById('duarSound').play();
+
             const imgElements = [
                 document.getElementById('img1'),
                 document.getElementById('img2'),
@@ -168,16 +182,28 @@
             ];
 
             const chosenImages = [];
-            for (const imgElement of imgElements) {
-                const chosenImage = await randomizeImage(imgElement, 20);
-                chosenImages.push(chosenImage);
+
+            if (expressMode) {
+                imgElements.forEach(imgElement => {
+                    const chosenImage = images[Math.floor(Math.random() * images.length)];
+                    imgElement.src = chosenImage;
+                    chosenImages.push(chosenImage);
+                });
+            } else {
+                // Randomize images one by one with animations
+                for (const imgElement of imgElements) {
+                    const chosenImage = await randomizeImage(imgElement, 20);
+                    chosenImages.push(chosenImage);
+                }
             }
 
             const allSame = chosenImages.every((val, i, arr) => val === arr[0]);
             document.getElementById('duarSound').pause();
             if (allSame) {
+                document.getElementById('gacorSound').currentTime = 0;
                 document.getElementById('gacorSound').play();
             } else {
+                document.getElementById('LMAOOOOO').currentTime = 0;
                 document.getElementById('LMAOOOOO').play();
             }
             document.getElementById('gacorButton').disabled = false;
